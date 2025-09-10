@@ -21,33 +21,9 @@
       <h2>Overview</h2>
       <div class="content">
         <p>
-          This project explores the colorization of historical glass plate images from the Prokudin-Gorskii collection. 
-          Sergei Mikhailovich Prokudin-Gorskii (1863-1944) pioneered color photography by capturing three exposures of 
-          each scene through red, green, and blue filters. Our task is to automatically align and composite these 
+          The task of this project is to automatically align and composite these 
           separate channel images to produce a single RGB color image.
         </p>
-        
-        <h3>Approach</h3>
-        <p>
-          The alignment process involves several key steps:
-        </p>
-        <ul>
-          <li><strong>Channel Extraction:</strong> Each digitized glass plate contains three vertically stacked images 
-          representing the blue, green, and red channels. These are extracted by dividing the image into three equal parts.</li>
-          
-          <li><strong>Alignment Metric:</strong> I used Normalized Cross-Correlation (NCC) as the similarity metric, 
-          which is more robust to brightness variations compared to simple Sum of Squared Differences (SSD).</li>
-          
-          <li><strong>Search Strategy:</strong> For smaller images (.jpg format), an exhaustive search over a window of 
-          displacements ([-15, 15] pixels) is sufficient. For larger .tif images, I implemented an image pyramid approach 
-          with recursive alignment at multiple scales, starting from coarse resolutions and refining at each level.</li>
-          
-          <li><strong>Edge Detection:</strong> To improve alignment accuracy, especially for images with varying brightness 
-          across channels, I applied edge detection preprocessing using gradient magnitude calculations.</li>
-          
-          <li><strong>Auto-cropping:</strong> Implemented automatic border removal to eliminate the black and white 
-          artifacts from the glass plate edges.</li>
-        </ul>
       </div>
     </section>
 
@@ -64,7 +40,6 @@
             <img src="images/cathedral.jpg" alt="Cathedral">
             <figcaption>
               <strong>Cathedral</strong>
-              <span class="offsets">G: (5, 2), R: (12, 3)</span>
             </figcaption>
           </figure>
         </div>
@@ -74,7 +49,6 @@
             <img src="images/monastery.jpg" alt="Monastery">
             <figcaption>
               <strong>Monastery</strong>
-              <span class="offsets">G: (-3, 2), R: (3, 2)</span>
             </figcaption>
           </figure>
         </div>
@@ -84,7 +58,6 @@
             <img src="images/tobolsk.jpg" alt="Tobolsk">
             <figcaption>
               <strong>Tobolsk</strong>
-              <span class="offsets">G: (3, 3), R: (6, 3)</span>
             </figcaption>
           </figure>
         </div>
@@ -94,7 +67,6 @@
             <img src="images/church_color.jpg" alt="Church">
             <figcaption>
               <strong>Church</strong>
-              <span class="offsets">G: (25, 4), R: (58, -4)</span>
             </figcaption>
           </figure>
         </div>
@@ -104,7 +76,6 @@
             <img src="images/emir_color.jpg" alt="Emir">
             <figcaption>
               <strong>Emir</strong>
-              <span class="offsets">G: (49, 24), R: (107, 40)</span>
             </figcaption>
           </figure>
         </div>
@@ -114,7 +85,6 @@
             <img src="images/harvesters_color.jpg" alt="Harvesters">
             <figcaption>
               <strong>Harvesters</strong>
-              <span class="offsets">G: (59, 16), R: (123, 13)</span>
             </figcaption>
           </figure>
         </div>
@@ -124,7 +94,6 @@
             <img src="images/icon_color.jpg" alt="Icon">
             <figcaption>
               <strong>Icon</strong>
-              <span class="offsets">G: (41, 17), R: (89, 23)</span>
             </figcaption>
           </figure>
         </div>
@@ -134,7 +103,6 @@
             <img src="images/italil_color.jpg" alt="Lady">
             <figcaption>
               <strong>Lady</strong>
-              <span class="offsets">G: (51, 9), R: (111, 11)</span>
             </figcaption>
           </figure>
         </div>
@@ -144,7 +112,6 @@
             <img src="images/lastochikino_color.jpg" alt="Lastochikino">
             <figcaption>
               <strong>Lastochikino</strong>
-              <span class="offsets">G: (42, 22), R: (103, 29)</span>
             </figcaption>
           </figure>
         </div>
@@ -154,7 +121,6 @@
             <img src="images/lugano_color.jpg" alt="Lugano">
             <figcaption>
               <strong>Lugano</strong>
-              <span class="offsets">G: (37, 16), R: (84, 14)</span>
             </figcaption>
           </figure>
         </div>
@@ -164,7 +130,6 @@
             <img src="images/melons_color.jpg" alt="Melons">
             <figcaption>
               <strong>Melons</strong>
-              <span class="offsets">G: (81, 10), R: (177, 13)</span>
             </figcaption>
           </figure>
         </div>
@@ -174,7 +139,6 @@
             <img src="images/self_portrait_color.jpg" alt="Self Portrait">
             <figcaption>
               <strong>Self Portrait</strong>
-              <span class="offsets">G: (78, 29), R: (175, 37)</span>
             </figcaption>
           </figure>
         </div>
@@ -184,7 +148,6 @@
             <img src="images/siren_color.jpg" alt="Siren">
             <figcaption>
               <strong>Siren</strong>
-              <span class="offsets">G: (55, 16), R: (119, 15)</span>
             </figcaption>
           </figure>
         </div>
@@ -194,7 +157,6 @@
             <img src="images/three_generations_color.jpg" alt="Three Generations">
             <figcaption>
               <strong>Three Generations</strong>
-              <span class="offsets">G: (53, 14), R: (111, 11)</span>
             </figcaption>
           </figure>
         </div>
@@ -214,7 +176,6 @@
             <img src="images/choice1_color.jpg" alt="Choice Image 1">
             <figcaption>
               <strong>Choice 1: Railway Scene</strong>
-              <span class="offsets">G: (42, 5), R: (87, 32)</span>
               <p>This image features a railway bridge with complex geometric patterns that provided good alignment features.</p>
             </figcaption>
           </figure>
@@ -225,7 +186,6 @@
             <img src="images/choice2_color.jpg" alt="Choice Image 2">
             <figcaption>
               <strong>Choice 2: Village Landscape</strong>
-              <span class="offsets">G: (64, 12), R: (137, 22)</span>
               <p>A pastoral scene with buildings and natural elements. The varied textures helped achieve accurate alignment.</p>
             </figcaption>
           </figure>
@@ -236,7 +196,6 @@
             <img src="images/choice3_color.jpg" alt="Choice Image 3">
             <figcaption>
               <strong>Choice 3: Architectural Detail</strong>
-              <span class="offsets">G: (72, 10), R: (141, 17)</span>
               <p>This architectural photograph with its detailed stonework provided excellent edge features for alignment.</p>
             </figcaption>
           </figure>
@@ -249,12 +208,12 @@
       <div class="content">
         <p>
           The most challenging aspect was aligning the Emir photograph, where the different color channels had 
-          significantly different brightness values for the clothing. Using edge detection preprocessing solved 
-          this issue by focusing on structural features rather than color intensities.
+          significantly different brightness values for the clothing. I first tried the zero mean approach, and then used edge detection preprocessing to solve 
+          this issue. Adjusting the window size of the pyramid also helped to make more precise alignment.
         </p>
         <p>
-          The pyramid approach was essential for processing high-resolution .tif files efficiently, reducing 
-          computation time from several minutes to under 30 seconds per image while maintaining alignment accuracy.
+          The pyramid approach I developed was also essential for processing high-resolution .tif files efficiently, reducing 
+          computation time from several minutes to under 30 seconds (on MacBook Pro) per image while maintaining alignment accuracy.
         </p>
       </div>
     </section>
